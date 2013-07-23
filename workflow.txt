@@ -1,0 +1,38 @@
+---- Setup ----
+
+Update application.js to load files needed in the proper order as we go
+
+1 Setup index.html.erb file, ID main regions, setup app.js.coffee
+	- define app in primary app.js.coffee file
+	- App.addRegions
+	- App.on "initiialize:after" Backbone.history.start()
+	- call App
+2 Start app in application index.html.erb, using a JS tag
+
+---- Modules/Apps ----
+
+NO BACKEND
+1 Primary module_app.js.coffee file
+	- this is basically a wrapper app that tells the Controller to call different actions
+	- use the API object to define functions that call controller actions
+2 Controller for restful subdirectory (show, list, etc)
+	- be sure to separate functionality 
+	-- ie do not manually implement getters in a function, define a separate getter
+	- Setup controller to try to insert view into appropriate region, then move to views
+3 Define req'ed Views
+	- setup template
+
+BACKEND
+1 Create Rails model, DB table, controller (respond_to :json), and 
+index.json.rabl
+
+2 Create entities (model and collection)
+
+3 Top-level *_app.js.coffee file
+	- create router first
+	- then addInitializer with proper controller
+
+4 Create controller
+	- setup request for data from server
+
+5 setup handler in the entities file
